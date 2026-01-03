@@ -54,9 +54,9 @@ def receive():
             break
 
 # --- ШРИФТИ ---
-font_win = font.Font(None, 72)
-font_main = font.Font(None, 36)
-font_name = font.Font(None, 24) # Шрифт для імен над ракетками
+font_win = font.Font("DoorsContinued-Regular.otf", 72)
+font_main = font.Font("DoorsContinued-Regular.otf", 36)
+font_name = font.Font("DoorsContinued-Regular.otf", 24) # Шрифт для імен над ракетками
 
 # --- ЗОБРАЖЕННЯ ----
 # Додано перевірку наявності файлів, щоб уникнути помилок
