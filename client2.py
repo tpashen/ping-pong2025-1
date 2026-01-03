@@ -63,6 +63,7 @@ font_name = font.Font("DoorsContinued-Regular.otf", 24) # Шрифт для ім
 try:
     background = transform.scale(image.load('fon.jpg'), (WIDTH, HEIGHT))
     background_start = transform.scale(image.load('fon_start.jpg'), (WIDTH, HEIGHT))
+    background_end = transform.scale(image.load('game_over.png'), (WIDTH, HEIGHT))
 except:
     background = Surface((WIDTH, HEIGHT))
     background.fill((30, 30, 30))
@@ -101,7 +102,8 @@ while True:
 
     # Стан завершення гри
     if "winner" in game_state and game_state["winner"] is not None:
-        screen.blit(background, (0, 0))
+        screen.blit(background_end, (0, 0))
+        
         if you_winner is None:
             you_winner = (game_state["winner"] == my_id)
 
