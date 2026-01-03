@@ -54,7 +54,7 @@ def receive():
             break
 
 # --- ШРИФТИ ---
-font_win = font.Font("DoorsContinued-Regular.otf", 72)
+font_win = font.Font("DoorsContinued-Regular.otf", 60)
 font_main = font.Font("DoorsContinued-Regular.otf", 36)
 font_name = font.Font("DoorsContinued-Regular.otf", 24) # Шрифт для імен над ракетками
 
@@ -107,7 +107,7 @@ while True:
         if you_winner is None:
             you_winner = (game_state["winner"] == my_id)
 
-        text = "Ти переміг!" if you_winner else "Пощастить \nнаступним разом!"
+        text = "Ти переміг!" if you_winner else "Пощастить наступним разом!"
         win_text = font_win.render(text, True, (255, 215, 0))
         screen.blit(win_text, win_text.get_rect(center=(WIDTH // 2, HEIGHT // 2)))
 
