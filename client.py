@@ -50,7 +50,7 @@ background = transform.scale(image.load('fon.jpg'),(WIDTH,HEIGHT))
 background_start = transform.scale(image.load('fon_start.jpg'),(WIDTH,HEIGHT))
 # --- ЗВУКИ ---
 mixer.init()
-mixer.music.load("game.ogg")
+mixer.music.load("song18.mp3")
 mixer.music.play()
 kick = mixer.Sound('click.wav')
 
