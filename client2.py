@@ -103,11 +103,11 @@ while True:
     # Стан завершення гри
     if "winner" in game_state and game_state["winner"] is not None:
         screen.blit(background_end, (0, 0))
-        
+
         if you_winner is None:
             you_winner = (game_state["winner"] == my_id)
 
-        text = "Ти переміг!" if you_winner else "Пощастить наступним разом!"
+        text = "Ти переміг!" if you_winner else "Пощастить \nнаступним разом!"
         win_text = font_win.render(text, True, (255, 215, 0))
         screen.blit(win_text, win_text.get_rect(center=(WIDTH // 2, HEIGHT // 2)))
 
