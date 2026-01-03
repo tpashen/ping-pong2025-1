@@ -7,7 +7,14 @@ from pygame import *
 import socket
 import json
 from threading import Thread
+from menu import ConnectWindow
 
+
+win = ConnectWindow()
+win.mainloop()
+name = win.name
+port = win.port
+host = win.host
 # ---НАЛАШТУВАННЯ ---
 WIDTH, HEIGHT = 800, 600
 init()
@@ -19,7 +26,7 @@ def connect_to_server():
     while True:
         try:
             client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            client.connect(('localhost', 8080)) # ---- Підключення до сервера
+            client.connect((host, port)) # ---- Підключення до сервера
             buffer = ""
             game_state = {}
             my_id = int(client.recv(24).decode())
@@ -51,7 +58,7 @@ background_start = transform.scale(image.load('fon_start.jpg'),(WIDTH,HEIGHT))
 # --- ЗВУКИ ---
 mixer.init()
 mixer.music.load("song18.mp3")
-mixer.music.play()
+mixer.music.play(-1)
 kick = mixer.Sound('click.wav')
 
 # --- ГРА ---
@@ -118,8 +125,8 @@ while True:
 
     else:
         screen.blit(background_start,(0,0))
-        mixer.music.load("menu.ogg")
-        mixer.music.play()
+        mixer.music.load("song18.mp3")
+        mixer.music.play(-1)
         wating_text = font_main.render(f"Очікування гравців...", True, (255, 255, 255))
         screen.blit(wating_text, (WIDTH // 2 - 25, 20))
 
