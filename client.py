@@ -109,6 +109,9 @@ while True:
     if game_state:
         #screen.fill((30, 30, 30))
         screen.blit(background, (0,0))
+        
+        mixer.music.load("song18.mp3")
+        mixer.music.play()
         draw.rect(screen, (0, 255, 0), (20, game_state['paddles']['0'], 20, 100))
         draw.rect(screen, (255, 0, 255), (WIDTH - 40, game_state['paddles']['1'], 20, 100))
         draw.circle(screen, (255, 255, 255), (game_state['ball']['x'], game_state['ball']['y']), 10)
@@ -125,8 +128,8 @@ while True:
 
     else:
         screen.blit(background_start,(0,0))
-        mixer.music.load("song18.mp3")
-        mixer.music.play(-1)
+        mixer.music.load("menu.wav")
+        mixer.music.play()
         wating_text = font_main.render(f"Очікування гравців...", True, (255, 255, 255))
         screen.blit(wating_text, (WIDTH // 2 - 25, 20))
 
