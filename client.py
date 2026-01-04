@@ -50,8 +50,8 @@ def receive():
             break
 
 # --- ШРИФТИ ---
-font_win = font.Font(None, 72)
-font_main = font.Font(None, 36)
+#font_win = font.Font(None, 72)
+#font_main = font.Font(None, 36)
 
 font_win = font.Font("DoorsContinued-Regular.otf", 60)
 font_main = font.Font("DoorsContinued-Regular.otf", 36)
